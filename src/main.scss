@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap');
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mini-list {
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -1px;
+}
+
+.mini-list li {
+    flex-basis: auto;
+    margin: .25em 0;
+    padding: 0 1em;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 12px;
+}
+
+.mini-list li:first-child {
+    padding-left: 0;
+}
+
+.movie-image img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.movie-image a::after {
+    transition: all .3s ease-in-out
+}
+
+.movie-image a:hover::after {
+    background-color: rgba(36, 186, 239, .3)
+}
+
+.movie-meta,
+.movie-title a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-decoration: none;
+}
+
+.movie-meta span {
+    font-size: 12px;
+}
+
+.movie-meta span:not(:last-child)::after {
+    content: ",";
+    margin-right: 2px;
+    color: #949cb0
+}
+
+.movie-meta.dot span:not(:last-child)::after {
+    content: ".";
+    margin-right: -1px;
+    margin-left: 4px;
+    margin-top: -3px
+}
+
+.movie-title a {
+    color: #000
+}
+
+.movie-title a:hover {
+    color: #24baef
+}
+
+.movie--title a {
+    color: #fff
+}
+
+.movie--title a:hover {
+    color: #24baef
+}
+
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: transparent;
+}
